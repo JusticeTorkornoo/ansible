@@ -1,0 +1,11 @@
+- hosts: "machines"
+  become: yes
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+        upgrade: 'yes'
+        
+    - name: reboot
+      reboot:
+        reboot_timeout: 5000

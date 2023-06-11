@@ -1,0 +1,15 @@
+- hosts: "single"
+  become: yes
+  tasks:
+    - name: docker.io install
+      apt:
+        name: docker.io
+        update_cache: yes
+
+    - name: docker-compose install
+      apt:
+        name: docker-compose
+        update_cache: yes
+
+    - name: install portainer
+      shell: 'docker run -d --name="portainer" --restart on-failure -p 9100:9000 -p 8100:8000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest'

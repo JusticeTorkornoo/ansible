@@ -1,0 +1,4 @@
+- hosts: "machines"
+  become: yes
+  tasks:
+    - ping:

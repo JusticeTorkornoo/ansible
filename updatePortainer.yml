@@ -1,0 +1,9 @@
+- hosts: "docker"
+  become: yes
+  tasks:
+    - name: stop portainer container
+      shell: 'docker stop portainer && sudo docker rm portainer'
+    - name: pull latest portainer image
+      shell: 'docker pull portainer/portainer-ce:latest'
+    - name: recreate portainer container
+      shell: 'docker run -d --name="portainer" --restart on-failure -p 9100:9000 -p 8100:8000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest'

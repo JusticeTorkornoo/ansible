@@ -1,0 +1,5 @@
+- hosts: "docker"
+  become: yes
+  tasks:
+    - name: give impulse permission to control docker
+      shell: "gpasswd -a $USER docker"
