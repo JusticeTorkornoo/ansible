@@ -10,9 +10,6 @@
       reboot:
         reboot_timeout: 5000
 
-    - name: add droid to sudo group
-      shell: 'usermod -aG sudo droid'
-
     - name: install qemu-guest-agent
       apt:
         name: qemu-guest-agent
