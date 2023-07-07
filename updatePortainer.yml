@@ -1,4 +1,4 @@
-- hosts: "docker"
+- hosts: "all"
   become: yes
   tasks:
     - name: stop portainer container
