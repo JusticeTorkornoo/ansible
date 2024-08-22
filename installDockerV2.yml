@@ -26,7 +26,7 @@
     - name: Apt Update
       apt:
         update_cache: yes
-        upgrade: 'no'
+        upgrade: 'yes'
 
     - name: Install Docker packages
       shell: 'sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin'
