@@ -32,8 +32,20 @@
         update_cache: yes
         upgrade: 'yes'
 
-    - name: Install Docker packages
-      shell: 'sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin'
+    - name: Install Docker packages 1
+      shell: 'sudo apt-get install docker-ce -y'
 
-    - name: Install Docker packages
+    - name: Install Docker packages 2
+      shell: 'sudo apt-get install ddocker-ce-cli -y'
+
+    - name: Install Docker packages 3
+      shell: 'sudo apt-get install containerd.io -y'
+
+    - name: Install Docker packages 4
+      shell: 'sudo apt-get install docker-buildx-plugin -y'
+
+    - name: Install Docker packages 5
+      shell: 'sudo apt-get install docker-compose-plugin -y'
+
+    - name: Run Docker Hello World
       shell: 'sudo docker run hello-world'
